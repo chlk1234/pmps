@@ -24,7 +24,9 @@
 ## 8. **`git revert <commit>` —— 安全回滚，不破坏历史**
 
 
-#### 9. **`git clean -fdn` → `-fd` —— 清理“幽灵文件”**
+## 9. **`git clean -fdn` → `-fd` —— 清理“幽灵文件”**
 
 
 ## 10. **`git config rerere.enabled true` —— 记住你怎么解决冲突的**
+
+
