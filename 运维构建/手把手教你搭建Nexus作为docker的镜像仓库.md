@@ -7,21 +7,19 @@
 
 主要功能包括创建托管仓库(即存放内部构件)、代理仓库（作为内部公共仓库构件缓存仓库）和组仓库(统一作为内部访问入口)。主要用于企业内网环境，以加速依赖下载、统一管理私有构件、组件、依赖库、容器镜像等，而且可以提供权限控制和实现安全策略。
 
-        我们之前通常是将其用作Maven的依赖仓库以及go的依赖库。实际上其支持的组件格式非常的多，我们可以看下下面几个图。
+我们之前通常是将其用作Maven的依赖仓库以及go的依赖库。实际上其支持的组件格式非常的多，我们可以看下下面几个图。
 
 Nexus支持的组件存储格式：
-
-![](https://i-blog.csdnimg.cn/direct/0e61ef20e4624005b939fb6d33d949f0.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
-
+![](https://i-blog.csdnimg.cn/direct/0e61ef20e4624005b939fb6d33d949f0.png)
 支持格式广泛，具体表格如下:
 
-![](https://i-blog.csdnimg.cn/direct/42857957af6244e79d70f84fc1822f57.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/42857957af6244e79d70f84fc1822f57.png)
 
-![](https://i-blog.csdnimg.cn/direct/dd83760b556a4fe1ab7d8432d9f841b1.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/dd83760b556a4fe1ab7d8432d9f841b1.png)
 
 社区版本几乎该有的功能都有，可谓是非常良心，其功能特征：
 
-![](https://i-blog.csdnimg.cn/direct/58e68e86c1ff4974a1bc01d7c24f9055.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/58e68e86c1ff4974a1bc01d7c24f9055.png)
 
 # 二、Nexus下载
 
@@ -29,14 +27,11 @@ Nexus支持的组件存储格式：
 
 不过需要填写登记信息才能下载，登记信息没有验证，填写即可,一般不接受公共邮箱，比如126邮箱、QQ邮箱都会提示不被接受。要求填写企业邮箱(不会验证，可以随便填)
 
-  
- 
-
-![](https://i-blog.csdnimg.cn/direct/d18b3f7c231c4d12b7e75a5e36cf0c16.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/d18b3f7c231c4d12b7e75a5e36cf0c16.png)
 
 登记表填写没问题后点击登录，验证码验证通过后会进入下面这个下载选择页面，选择对应的需要的安装包，这里由于我是安装在Linux Ubuntu 22.04版本的系统下，Intel的CPU，所以我选Unix x86的。
 
-![](https://i-blog.csdnimg.cn/direct/db9c4a0d00fd4dcda5798e73739bd320.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/db9c4a0d00fd4dcda5798e73739bd320.png)
 
 如果大家不能下载或者下载缓慢可以选择我已经下载好的，大家可以直接在我的资源中下载。
 
@@ -54,17 +49,15 @@ Nexus支持的组件存储格式：
 # 在/opt目录下建nexus目录存放安装包
 sudo mkdir -p /opt/nexus
 cd /opt/nexus
-# 下载安装包
+# 如果能下载则直接下载安装包,如果不能直接下载则到官方页面下载放到该目录
 wget https://cdn.download.sonatype.com/repository/downloads-prod-group/3/nexus-3.87.1-01-linux-x86_64.tar.gz
 # 执行解压
 tar xvz --keep-directory-symlink -f ./nexus-3.87.1-01-linux-x86_64.tar.gz
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 解压以后会看到两个目录，一个是nexus-3.87.1-01，另一个是sonatype-work
 
-![](https://i-blog.csdnimg.cn/direct/66ea0959baa44c09a319f1ec862f64a0.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/66ea0959baa44c09a319f1ec862f64a0.png)
 
 执行如下命令，进到nexus-3.87.1-01的bin目录下
 
@@ -74,11 +67,9 @@ cd nexus-3.87.1-01/bin/
 ls -l
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 显示如下图所示，有一个nexus的可执行文件(绿色后面带星号的)
 
-![](https://i-blog.csdnimg.cn/direct/da97d083c6d4479a96d58a4507e2abf3.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/da97d083c6d4479a96d58a4507e2abf3.png)
 
 可以通过这个程序来执行启动服务，可用的命令有：
 
@@ -90,8 +81,6 @@ ls -l
 ./nexus start
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 日志会输出到应用程序日志文件中。
 
 要停止在后台运行的 Nexus 存储库服务：
@@ -100,15 +89,11 @@ ls -l
 ./nexus stop
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 也可以使用 run 命令运行应用程序并在当前 shell 中显示日志，以便进行测试：
 
 ```bash
 ./nexus run
 ```
-
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
 
 所以用run一般是用于测试观察日志的情况。使用该命令启动应用程序后，应用程序将在当前 shell 中运行。可以在控制台中使用`run,`该命令停止应用程序 `CTRL+C。`
 
@@ -118,15 +103,11 @@ ls -l
 ./nexus restart
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 当有配置变化时，需要使变更生效，则可以使用force-reload命令时期强制加载生效。
 
 ```bash
 ./nexus force-reload
 ```
-
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
 
 **不过，在生产环境中安装软件时，需要将 Nexus Repository 配置为以服务形式运行。这样才能确保服务器重启后服务能够正常重启。**
 
@@ -146,8 +127,6 @@ sudo mkdir -p /data/share/nexus/nexus-data && chown -R 200 /data/share/nexus/nex
 # 运行容器
 docker run -d -p 8081:8081 --name nexus -v /data/share/nexus/nexus-data:/nexus-data sonatype/nexus3
 ```
-
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
 
 **这里注意几点：**
 
