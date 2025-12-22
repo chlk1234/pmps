@@ -1,6 +1,5 @@
 ​
 
-  
 # 一、Nexus是什么
 
  Sonatype Nexus，又叫Nexus Repository Manager。是一个管理和托管软件构件的仓库管理工具。支持多种格式，如Maven、Docker、npm、PyPI等，能帮助团队建立私有仓库，实现构件的集中存储、分发和管理，从而提升开发效率和构建可靠性。
@@ -148,33 +147,31 @@ Nexus Repository 启动后，使用 Web 浏览器访问服务 URL，即可访问
 http://<主机IP>:<端口>
 ```
 
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
-
 Nexus Repository 包含一个拥有完全访问权限的管理员用户。用户名是__admin__`admin.password` ，初始密码位于目录中一个名为 `<temporary_file_name>` 的临时文件中`$data-dir`。确实不知道怎么找，也可以先直接打开登录界面。比如我这里在浏览器输入地址：http://172.16.1.180:8081
 
 首次登录显示如下图所示登录界面，提示如何找到admin的密码：
 
-![](https://i-blog.csdnimg.cn/direct/165f743e75ce4f5aab048a02beda8a02.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/165f743e75ce4f5aab048a02beda8a02.png)
 
 我们根据提示进入/opt/nexus/sonatype-work/nexus3/目录查看(**一定要根据提示去找**)
 
-![](https://i-blog.csdnimg.cn/direct/e4a7649bcca046d3b51aedb8d2d4eed4.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/e4a7649bcca046d3b51aedb8d2d4eed4.png)
 
 用admin.password文件中的字符串作为密码登录，如下图：
 
-![](https://i-blog.csdnimg.cn/direct/e2083163c3e54b40ab3581e860cdc03f.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/e2083163c3e54b40ab3581e860cdc03f.png)
 
 admin首次登录必须修改密码：
 
-![](https://i-blog.csdnimg.cn/direct/52bd3f5ba6464e21bd41ac906adefc90.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/52bd3f5ba6464e21bd41ac906adefc90.png)
 
 修改密码后会问你是否允许匿名访问系统，允许匿名访问的话主要是指不需要密码就可以搜索、浏览和下载仓库中的组件。如果你是自己内网使用或者公司内部局域网可以根据情况设置匿名访问。如果不允许匿名访问的话就是所有这些操作必须有账号密码才能允许使用。我这里是内部访问就设置允许。
 
-![](https://i-blog.csdnimg.cn/direct/9f0ee4374f174aa7940f90cf97895a9d.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/9f0ee4374f174aa7940f90cf97895a9d.png)
 
 匿名访问页面如下图所示，搜索到的组件也可以直接下载使用。
 
-# ![](https://i-blog.csdnimg.cn/direct/ec5280d91a564f3ca78b3faa4c00d2ca.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/ec5280d91a564f3ca78b3faa4c00d2ca.png)
 
 # 五、配置docker镜像库
 
@@ -182,22 +179,23 @@ admin首次登录必须修改密码：
 
 我们重新从登录开始：
 
-![](https://i-blog.csdnimg.cn/direct/934869c51ff04d12bfb9075308d40b07.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/934869c51ff04d12bfb9075308d40b07.png)
 
-![](https://i-blog.csdnimg.cn/direct/9667fef85a2840ad84661819093131d3.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/9667fef85a2840ad84661819093131d3.png)
 
 登录后我们可以看到多了一个设置的菜单，这就是我们需要的
 
-![](https://i-blog.csdnimg.cn/direct/3cdd1524648447c58ef56fe340f06884.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/3cdd1524648447c58ef56fe340f06884.png)
 
 点击【settings】进行设置，主要就是设置Repositories
 
-![](https://i-blog.csdnimg.cn/direct/88e591bbe0104595812077dd5893b50d.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/88e591bbe0104595812077dd5893b50d.png)
 
-![](https://i-blog.csdnimg.cn/direct/4e6210989b6a4f68b54bcdc6021111e4.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑  
+![](https://i-blog.csdnimg.cn/direct/4e6210989b6a4f68b54bcdc6021111e4.png)
+
 如下图，选择一个添加，一般先添加一proxy的。
 
-![](https://i-blog.csdnimg.cn/direct/25d59d62dbbf41a3a31bf9e7784ef985.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/25d59d62dbbf41a3a31bf9e7784ef985.png)
 
 一般有hosted、proxy、group这三种，这三者有什么区别呢？
 
@@ -209,19 +207,19 @@ group 是一个分组聚合。
 
 由于国内公开镜像大部分不能用了，我添加一个能用的演示下添加proxy仓库：
 
-![](https://i-blog.csdnimg.cn/direct/b2833ef68ecb4f15bacde7917f041c20.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/b2833ef68ecb4f15bacde7917f041c20.png)
 
-![](https://i-blog.csdnimg.cn/direct/56c45183f81743f2a7aae3ce6e41087d.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/56c45183f81743f2a7aae3ce6e41087d.png)
 
 添加hosted仓库，这个主要用于内部组件上传存储到这里。
 
-![](https://i-blog.csdnimg.cn/direct/0b973e8879134d8587435b2f14d4f4d4.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/0b973e8879134d8587435b2f14d4f4d4.png)
 
 添加group仓库，这里要注意下：
 
-![](https://i-blog.csdnimg.cn/direct/63f2b523d23d4e10a23e094703ace561.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/63f2b523d23d4e10a23e094703ace561.png)
 
-![](https://i-blog.csdnimg.cn/direct/a51c5da65939462091d6b3b26993b97d.png)![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")​编辑
+![](https://i-blog.csdnimg.cn/direct/a51c5da65939462091d6b3b26993b97d.png)
 
 **这里有两点需要注意的：**
 
@@ -234,8 +232,6 @@ docker rm nexus
 # 在重新运行新的
 docker run -d -p 8081:8081 -p 16888:16888 --name nexus -v /data/share/nexus/nexus-data:/nexus-data sonatype/nexus3
 ```
-
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
 
 2.设置聚合是要注意顺序，一般来说hosted在前，因为一般是优先公司内部的，proxy在后，多个proxy时，选择稳定和访问速度快的在前，不稳定或者速度不理想的在后。
 
@@ -258,8 +254,6 @@ sudo vim /etc/docker/daemon.json
   "registry-mirrors": ["http://172.16.1.180:16888"]
 }
 ```
-
-![](data:image/gif;base64,R0lGODlhAQABAPABAP///wAAACH5BAEKAAAALAAAAAABAAEAAAICRAEAOw== "点击并拖拽以移动")
 
 注意：上面由于我改成了端口16888访问即可这样配置。
 
