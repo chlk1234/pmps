@@ -8,3 +8,7 @@
 
 ## 3. **`git cherry-pick <commit>` —— 只拿你需要的那一行代码**
 
+
+## 4. **`git bisect` —— 二分法定位“谁写的 bug”**
+
+## 5. **`git worktree add ../hotfix main` —— 一份代码，多套工作区**
