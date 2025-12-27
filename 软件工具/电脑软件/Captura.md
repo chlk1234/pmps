@@ -1,0 +1,11 @@
+
+- 截屏
+- 录制屏幕视频（AVI/GIF/MP4）
+- 带/不带鼠标光标的截图
+- 捕获特定区域、屏幕或窗口
+- 捕获鼠标点击或键盘输入
+- 混合录制自麦克风和扬声器输出的音频
+- 通过网络摄像头拍摄。
+- [可通过命令](https://mathewsachin.github.io/Captura/cmdline)行使用（_测试版_）。
+- 提供[多种语言版本](https://mathewsachin.github.io/Captura/translation)
+- 可配置[热键](https://mathewsachin.github.io/Captura/hotkeys)
