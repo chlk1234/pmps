@@ -1,0 +1,13 @@
+"Everything" 是 Windows 上一款搜索引擎，它能够基于文件名快速定文件和文件夹位置。Everything 有什么特点?
+- 轻量安装文件
+- 干净简洁的用户界面
+- 快速文件索引
+- 快速搜索
+- 快速启动
+- 最小资源使用
+- 便于文件分享
+- 实时更新
+- 免费软件
+- 无广告
+- Windows全系支持，包括Windows XP、Vista、Windows 7、Windows 8
+- 安装简单
