@@ -1,0 +1,2 @@
+FlClash 是一款基于 ClashMeta (Mihomo) 核心的网络代理工具，它的界面基于 Material You 设计，简单易用，同时支持 Windows、Android、Linux 和 macOS 系统，并且开源免费。
+[**FlClash** 是一款基于 **ClashMeta** 核心的流行网络代理软件，支持 **Windows、macOS、Android 和 Linux** 等多个平台。它提供了一个直观的图形化界面，用户可以轻松管理代理设置，支持多种常见的代理协议，如 **Shadowsocks、VMess、Trojan 和 Vless**。FlClash 旨在为用户提供高效且稳定的网络代理解决方案。](https://www.bing.com/ck/a?!&&p=dcb4dada5ff40f038e024dcc8e0a8e2242da930c1ba8d33dd53607cb2e8ba62bJmltdHM9MTc2Njc5MzYwMA&ptn=3&ver=2&hsh=4&fclid=1dfaf9ef-c0ea-65b8-2e51-edb8c11864bb&u=a1aHR0cHM6Ly9mbGNsYXNoLm1lbi90dXRvcmlhbC8&ntb=1)

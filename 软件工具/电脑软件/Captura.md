@@ -1,4 +1,4 @@
-Captura**是**一款适用于 Windows 的屏幕截图（包括屏幕截图和录制）应用程序，可以捕获屏幕、摄像头、音频和键盘输入。**它已停止维护**，但[源代码仍然存档在 GitHub 上，](https://github.com/MathewSachin/Captura)拥有超过 8000 个 star 和 1500 多个 fork。
+[Captura](https://github.com/MathewSachin/Captura)**是**一款适用于 Windows 的屏幕截图（包括屏幕截图和录制）应用程序，可以捕获屏幕、摄像头、音频和键盘输入。**它已停止维护**，但[源代码仍然存档在 GitHub 上，](https://github.com/MathewSachin/Captura)拥有超过 8000 个 star 和 1500 多个 fork。
 主要功能有：
 - 截屏
 - 录制屏幕视频（AVI/GIF/MP4）
