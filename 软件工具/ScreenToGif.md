@@ -9,3 +9,4 @@ ScreenToGif 原生支持 Windows 平台，提供最佳性能和稳定性。对�
 ScreenToGif 完全免费使用，没有任何功能限制或隐藏收费项目。软件采用开源许可协议，用户可以在 GitHub 上查看源代码、提交问题或参与贡献。
 
 ![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251227214527481.png)
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251227215745916.png)
