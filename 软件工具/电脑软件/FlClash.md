@@ -1,6 +1,7 @@
 [**FlClash**](https://github.com/chen08209/FlClash) 是一款基于 **ClashMeta** 核心的流行网络代理软件，支持 **Windows、macOS、Android 和 Linux** 等多个平台，并且开源免费。它提供了一个直观的图形化界面，简单易用，用户可以轻松管理代理设置，支持多种常见的代理协议，如 **Shadowsocks、VMess、Trojan 和 Vless**。FlClash 旨在为用户提供高效且稳定的网络代理解决方案。
-![[FlClash]](https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif)
+![FlClash](https://github.com/chen08209/FlClash/raw/main/snapshots/desktop.gif)
 
+![mobile](https://github.com/chen08209/FlClash/raw/main/snapshots/mobile.gif)
 ## FlClash 的功能特点
 
 - **多平台兼容性**： FlClash 支持多种平台，包括 Windows、macOS（Intel 和 ARM 芯片）、Linux 和 Android，能满足多数用户的需求。
