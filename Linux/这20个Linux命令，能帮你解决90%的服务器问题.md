@@ -1,4 +1,6 @@
-直击运维核心痛点，极具收藏价值。
+#linux #linux命令行 
+
+掌握这个20个Linux命令，能帮你解决90%的服务器问题，总结与实操结合，极具价值，建议【点赞】【收藏】，建议【关注我】，以免错过后续更多干货内容。
 
 ## 1.**`top` / `htop`**
 实时看 CPU、内存、进程占用。这是一个非常重要且常用的工具，能够帮你快速检查CPU、内存、进程的情况，对于排查服务器问题非常有效。
@@ -66,45 +68,81 @@ d开头是丢弃 (Discard) 相关 (d/s, 等)，通常是与 SSD 相关。f开头
 
 例如：`tcpdump -i eth0 port 80 -w http.pcap` 指抓取eth0网卡下端口80的数据 保存http.pcap文件中。
 
-## 9.**`iftop -i eth0`**
+## 9.**`iftop`**
 iftop是一个专门实时监控和查看网络流量的工具，可以实时看流量排行，比如可以用来揪出 DDoS 或异常上传进程。
 例如：`iftop -i eth0` 如下图所示
 ![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251229181637089.png)
 
 ## 10.**`grep`**
 文本搜索之王！支持正则、上下文显示。
+例如：`grep -A3 -B2 "FAILURE" syslog`（错误前后3行）
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230093527856.png)
+
 
 ## 11.**`tail -f`**
-实时追踪日志更新，调试必备。
-例如： `tail -f log | grep --color "Exception"`
+实时追踪日志更新，调试必备。可以通过管道符组合其他命令。
+例如： `tail -500f syslog | grep --color "failed"`
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230094123550.png)
+这样就可以通过关键词搜索到想要的内容了。常用于故障分析和排查。
 
 ## 12.**`awk` / `sed`**
 `awk` 统计分析（如 Nginx 状态码），`sed` 批量替换。
 例：`awk '{print $9}' access.log | sort | uniq -c`
-
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230094517672.png)
+如图，每种请求的状态值就统计出来了，左边是次数，右边是状态码。
 ## 13.**`find`**
-按大小、时间、名称找文件。
+按大小、时间、名称等找文件。
+例：`find /var/log -size +100M -mtime +7`（找7天前的大日志）
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230094853678.png)
 
-## 14.**`du -sh * | sort -hr`**
-看当前目录下各文件夹大小，快速定位“空间吞噬者”。
+## 14.**`du`**
+查看目录或者目录下的各文件大小，快速定位快速占领磁盘空间的“元凶”。
+如下：`du -sh * | sort -hr`快速定位哪些文件占用空间最大
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230095427314.png)
 
-## 15.**`lsof -i :端口号`**
-查哪个进程占用了端口（比 `netstat` 更直接）。
+## 15.**`lsof`**
+lsof是List Open Files的缩写，是一个强大的命令行工具，用于列出当前系统被进程打开的文件。由于Linux中“一切皆文件”的理念，所以包括普通文件、目录、网络连接（如TCP/UDP端口）、设备文件、管道、共享库等。最常用于查哪个进程占用了端口（比 `netstat` 更直接），即`lsof -i :端口号`查看端口被占用情况。
+例如：`lsof -i :3306` 查看3306是否被占用，以及被什么程序占用了。LISTEN那个即表示被占用了，mysqld占用了，这是mysql的守护进程。
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230100108309.png)
 
-## 16.**`ps aux | grep [p]rocess`**
-查找特定进程（方括号避免 grep 自身被匹配）。
+## 16.**`ps`**
+查找特定进程。常组合使用`ps aux | grep [p]rocess` （方括号避免 grep 自身被匹配）
+例如:`ps aux | grep [j]ava` 或者 `ps aux | grep java` 前者是不包含自身的，后者会显示grep自身。
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230102757563.png)
+上图是`ps aux | grep [j]ava`的效果，下图是`ps aux | grep java`，可以对照看下有什么不一样。
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230103300793.png)
 
 ## 17.**`kill` / `killall`**
 杀死进程，先 `kill PID`（优雅退出），不行再 `kill -9`（强制终止）。
 > [!note]
 > 正式环境一定要谨慎使用 -9
 
+这个就不展示了，实际上没啥好展示的，kill完也不会提示(记住:**没有消息就是好消息**)，不过一般是跟第16个命令一起使用，先查出进程号，在直接kill，例如要杀上面的admin.jar进程，直接`kill 3491`或者`kill -9 3491`。
 
 ## 18.**`systemctl`**
-管理服务：`start`/`stop`/`restart`/`status`
+这个没啥好说的，管理服务命令，常配合：`start`/`stop`/`restart`/`status`使用。
+例如:
+启动docker服务`systemctl  start  docker` 
+重启docker服务`systemctl  restart  docker` 。
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230105138196.png)
+没有消息就是好消息，服务已经重启好了，只不过部署应用有点多的话，重启需要一会儿等待完成。
 
-## 19.**`journalctl -u 服务名 --since "1 hour ago"`**
-查 systemd 服务的日志，比翻 `/var/log` 更集中。就是日志量大时会有点耗时。
+## 19.**`journalctl`**
+查 systemd 服务的日志，比翻 `/var/log` 更集中。就是日志量大时会有点耗时。常用例如：`journalctl -u 服务名 --since "1 hour ago"`查看服务近1小时日志。
+例如我想看docker的近一小时系统日志。直接`journalctl -u docker --since "1 hour ago"`
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230103910078.png)
 
-## 20.**`history | grep "关键词"`**
-快速帮你找回你曾经敲过的命令，省得重复记忆！
+## 20.**`history`**
+history就是快速帮你找回你曾经敲过的命令，省得重复记忆！
+`history | grep "关键词"`这个特别好用，直接上图。
+![image.png](https://cdn.jsdelivr.net/gh/xtcn92/zhpic@image/20251230103539957.png)
+最近使用过什么命令全出来了。
+
+**如果网站慢？我们试试按照这个思路排查** → `top`（看CPU）→ `ss`（看连接数）→ `tail -f`（看日志）→ `iostat`（看磁盘）。
+
+当然我们不是要去死记硬背这些命令，这里只是总结知识点帮助我们快速掌握最常用最核心的东西，达到事半功倍的效果。我们应该先熟悉这些命令，然后灵活应用，特别是组合使用这些命令，往往能达到四两拨千斤的效果。
+
+---
+
+
+看都看完了，不【点赞】【收藏】一下么，建议【关注我】，后续更多干货内容不容错过。
