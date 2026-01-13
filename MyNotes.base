@@ -1,0 +1,14 @@
+views:
+  - type: table
+    name: 表格
+    filters:
+      and:
+        - file.size < 80
+    order:
+      - file.name
+      - file.folder
+      - file.size
+      - file.tags
+    sort: []
+    columnSize:
+      file.name: 478
